@@ -1,0 +1,6 @@
+/target/
+/.sonar/
+/.gwt/
+/.settings/
+/gwt-unitCache/
+/war/

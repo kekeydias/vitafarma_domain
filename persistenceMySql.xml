@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<persistence-unit name="persistenceProjectDB"
+		transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>br.com.vitafarma.domain.Authority</class>
+		<class>br.com.vitafarma.domain.Cenario</class>
+		<class>br.com.vitafarma.domain.Cidade</class>
+		<class>br.com.vitafarma.domain.Cliente</class>
+		<class>br.com.vitafarma.domain.CupomVenda</class>
+		<class>br.com.vitafarma.domain.EntradaProduto</class>
+		<class>br.com.vitafarma.domain.Estado</class>
+		<class>br.com.vitafarma.domain.Fornecedor</class>
+		<class>br.com.vitafarma.domain.Funcionario</class>
+		<class>br.com.vitafarma.domain.ItemVenda</class>
+		<class>br.com.vitafarma.domain.Laboratorio</class>
+		<class>br.com.vitafarma.domain.MyEntity</class>
+		<class>br.com.vitafarma.domain.NotaFiscal</class>
+		<class>br.com.vitafarma.domain.Pessoa</class>
+		<class>br.com.vitafarma.domain.PessoaFisica</class>
+		<class>br.com.vitafarma.domain.PessoaJuridica</class>
+		<class>br.com.vitafarma.domain.Produto</class>
+		<class>br.com.vitafarma.domain.Usuario</class>
+		<class>br.com.vitafarma.domain.Venda</class>
+
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/vitafarma" />
+			<property name="hibernate.connection.username" value="XXXXX" />
+			<property name="hibernate.connection.password" value="YYYYY" />
+			<property name="hibernate.transaction.auto_close_session" value="false" />
+			<property name="hibernate.transaction.flush_before_completion" value="false" />
+		</properties>
+
+	</persistence-unit>
+</persistence>
