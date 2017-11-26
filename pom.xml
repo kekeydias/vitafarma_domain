@@ -252,14 +252,8 @@
 
 	<distributionManagement>
 		<repository>
-			<id>central</id>
-			<name>titas-releases</name>
-			<url>http://localhost:8081/artifactory/libs-release</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>titas-snapshots</name>
+			<id>libs-snapshot</id>
 			<url>http://localhost:8081/artifactory/libs-snapshot</url>
-		</snapshotRepository>
+		</repository>
 	</distributionManagement>
 </project>

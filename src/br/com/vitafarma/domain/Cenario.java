@@ -73,12 +73,12 @@ public class Cenario extends MyEntity implements Serializable, Comparable<Cenari
 	@NotNull
 	@ManyToOne(targetEntity = Usuario.class, optional = false)
 	@JoinColumn(name = "CEN_CREATOR_ID", nullable = false)
-	private transient Usuario criadoPor = null;
+	private Usuario criadoPor = null;
 
 	@NotNull
 	@ManyToOne(targetEntity = Usuario.class, optional = false)
 	@JoinColumn(name = "CEN_UPDATER_ID", nullable = false)
-	private transient Usuario atualizadoPor = null;
+	private Usuario atualizadoPor = null;
 
 	@Column(nullable = false, name = "NOME")
 	@Size(min = 1, max = 50)

@@ -17,6 +17,7 @@
 		<class>br.com.vitafarma.domain.Cliente</class>
 		<class>br.com.vitafarma.domain.CupomVenda</class>
 		<class>br.com.vitafarma.domain.EntradaProduto</class>
+		<class>br.com.vitafarma.domain.EntradaProdutoGroup</class>
 		<class>br.com.vitafarma.domain.Estado</class>
 		<class>br.com.vitafarma.domain.Fornecedor</class>
 		<class>br.com.vitafarma.domain.Funcionario</class>

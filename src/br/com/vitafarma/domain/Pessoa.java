@@ -51,7 +51,7 @@ public abstract class Pessoa extends MyEntity implements Serializable {
 	@NotNull
 	@ManyToOne(targetEntity = Cidade.class, optional = false)
 	@JoinColumn(name = "PESSOA_CIDADE_ID", nullable = false)
-	private transient Cidade cidade = null;
+	private Cidade cidade = null;
 
 	public Long getId() {
 		return this.id;

@@ -102,12 +102,12 @@ public class Venda extends MyEntity implements Serializable, Comparable<Venda> {
 	@NotNull
 	@ManyToOne(targetEntity = Cenario.class, optional = false)
 	@JoinColumn(name = "VENDA_CENARIO_ID", nullable = false)
-	private transient Cenario cenario = null;
+	private Cenario cenario = null;
 
 	@NotNull
 	@ManyToOne(targetEntity = Cliente.class, optional = false)
 	@JoinColumn(name = "VENDA_CLIENTE_ID", nullable = false)
-	private transient Cliente cliente = null;
+	private Cliente cliente = null;
 
 	public Long getId() {
 		return this.id;

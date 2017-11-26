@@ -152,21 +152,21 @@ public class EntradaProduto extends MyEntity implements Serializable, Comparable
 	@NotNull
 	@ManyToOne(targetEntity = Fornecedor.class, optional = false)
 	@JoinColumn(name = "ENT_PRD_FORN_ID", nullable = false)
-	private transient Fornecedor fornecedor = null;
+	private Fornecedor fornecedor = null;
 
 	@NotNull
 	@ManyToOne(targetEntity = Produto.class, optional = false)
 	@JoinColumn(name = "ENT_PRD_PRD_ID", nullable = false)
-	private transient Produto produto = null;
+	private Produto produto = null;
 
 	@ManyToOne(targetEntity = NotaFiscal.class, optional = true)
 	@JoinColumn(name = "ENT_PRD_NF_ID", nullable = true)
-	private transient NotaFiscal notaFiscal;
+	private NotaFiscal notaFiscal;
 
 	@NotNull
 	@ManyToOne(targetEntity = EntradaProdutoGroup.class, optional = false)
 	@JoinColumn(name = "ENT_PRD_GRP_ID", nullable = false)
-	private transient EntradaProdutoGroup entradaProdutoGroup;
+	private EntradaProdutoGroup entradaProdutoGroup;
 
 	public void refresh() {
 		this.getEntityManager().getTransaction().begin();

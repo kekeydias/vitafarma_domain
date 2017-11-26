@@ -163,7 +163,7 @@ public class Produto extends MyEntity implements Serializable, Comparable<Produt
 
 	@ManyToOne(targetEntity = Laboratorio.class, optional = true)
 	@JoinColumn(name = "PRD_LAB_ID", nullable = true)
-	private transient Laboratorio laboratorio = null;
+	private Laboratorio laboratorio = null;
 
 	@NotNull
 	@Column(name = "MED_ABC", nullable = false, unique = false)

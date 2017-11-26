@@ -103,7 +103,7 @@ public class NotaFiscal extends MyEntity implements Serializable, Comparable<Not
 	@NotNull
 	@ManyToOne(targetEntity = Fornecedor.class, optional = false)
 	@JoinColumn(name = "NF_FORN_ID", nullable = false)
-	private transient Fornecedor fornecedor = null;
+	private Fornecedor fornecedor = null;
 
 	public void refresh() {
 		this.getEntityManager().getTransaction().begin();

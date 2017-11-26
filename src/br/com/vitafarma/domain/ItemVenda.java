@@ -68,16 +68,16 @@ public class ItemVenda extends MyEntity implements Serializable, Comparable<Item
 	@NotNull
 	@ManyToOne(targetEntity = Produto.class, optional = false)
 	@JoinColumn(name = "IT_VENDA_PRD_ID", nullable = false)
-	private transient Produto produto = null;
+	private Produto produto = null;
 
 	@NotNull
 	@ManyToOne(targetEntity = Venda.class, optional = false)
 	@JoinColumn(name = "IT_VENDA_VENDA_ID", nullable = false)
-	private transient Venda venda = null;
+	private Venda venda = null;
 
 	@ManyToOne(targetEntity = CupomVenda.class, optional = true, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "IT_VENDA_CUPOM_ID", nullable = true)
-	private transient CupomVenda cupomVenda = null;
+	private CupomVenda cupomVenda = null;
 
 	public Long getId() {
 		return this.id;

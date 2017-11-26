@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
@@ -32,17 +33,17 @@
 		<class>br.com.vitafarma.domain.Venda</class>
 
 		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle9iDialect" />
-			<property name="hibernate.hbm2ddl.auto" value="create" />
-			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="true" />
-			<property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver" />
-			<property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1521:vitafarma" />
-			<property name="hibernate.connection.username" value="XXXXX" />
-			<property name="hibernate.connection.password" value="YYYYY" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/vitafarma" />
+			<property name="hibernate.connection.username" value="vitafarma" />
+			<property name="hibernate.connection.password" value="XXXXX" />
 			<property name="hibernate.transaction.auto_close_session" value="false" />
 			<property name="hibernate.transaction.flush_before_completion" value="false" />
-			<property name="hibernate.query.factory_class" value="org.hibernate.hql.classic.ClassicQueryTranslatorFactory" />
 		</properties>
+
 	</persistence-unit>
 </persistence>

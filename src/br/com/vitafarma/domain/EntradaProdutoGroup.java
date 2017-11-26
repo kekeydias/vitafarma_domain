@@ -110,11 +110,11 @@ public class EntradaProdutoGroup extends MyEntity implements Serializable, Compa
 	@NotNull
 	@ManyToOne(targetEntity = Fornecedor.class, optional = false)
 	@JoinColumn(name = "ENT_PRD_GRP_FORN_ID", nullable = false)
-	private transient Fornecedor fornecedor = null;
+	private Fornecedor fornecedor = null;
 
 	@ManyToOne(targetEntity = NotaFiscal.class, optional = true)
 	@JoinColumn(name = "ENT_PRD_GRP_NF_ID", nullable = true)
-	private transient NotaFiscal notaFiscal = null;
+	private NotaFiscal notaFiscal = null;
 
 	public void refresh() {
 		this.getEntityManager().getTransaction().begin();

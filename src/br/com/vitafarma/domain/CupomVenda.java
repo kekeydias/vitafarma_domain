@@ -50,7 +50,7 @@ public class CupomVenda extends MyEntity implements Serializable, Comparable<Cup
 	@NotNull
 	@ManyToOne(targetEntity = Venda.class, optional = true)
 	@JoinColumn(name = "CUPOM_VENDA_ID", nullable = true)
-	private transient Venda venda = null;
+	private Venda venda = null;
 
 	@Column(nullable = false, name = "TOTAL_VENDA")
 	private Double totalVenda;

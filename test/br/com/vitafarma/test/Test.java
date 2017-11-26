@@ -43,15 +43,12 @@ public class Test extends TestCase {
 		// Carregando uma estado qualquer
 		List<Estado> estados = Estado.findAll();
 
-		if (estados.size() == 0) {
+		if (estados.isEmpty()) {
 			this.estado = new Estado();
-
 			this.estado.setId(null);
 			this.estado.setNome("Rio de Janeiro");
 			this.estado.setSigla("RJ");
-
 			this.estado.save();
-
 			MyEntity.log("\nEstado:\n" + this.estado);
 		} else {
 			this.estado = estados.get(0);
@@ -60,7 +57,7 @@ public class Test extends TestCase {
 		// Carregando uma cidade qualquer do estado selecionado acima
 		List<Cidade> cidadesEstado = Cidade.findByEstado(this.estado);
 
-		if (cidadesEstado.size() == 0) {
+		if (cidadesEstado.isEmpty()) {
 			this.cidade = new Cidade();
 
 			this.cidade.setId(null);
@@ -73,7 +70,7 @@ public class Test extends TestCase {
 		} else {
 			List<Cidade> cidades = Cidade.findAll();
 
-			this.cidade = (cidades.size() == 0 ? null : cidades.get(0));
+			this.cidade = (cidades.isEmpty() ? null : cidades.get(0));
 		}
 	}
 
@@ -84,15 +81,13 @@ public class Test extends TestCase {
 
 		MyEntity.log("\nTotal de produtos: " + produtos.size());
 
-		if (produtos.size() == 0) {
+		if (produtos.isEmpty()) {
 			produto = new Produto();
-
 			produto.setId(null);
 			produto.setNome("CEFALEXINA");
 			produto.setDescricao("CEFALEXINA 20 MG");
 			produto.setPreco(1000.00);
 			produto.setMedAbc(300L);
-
 			produto.save();
 		} else {
 			produto = produtos.get(0);
@@ -107,14 +102,12 @@ public class Test extends TestCase {
 		Cliente cliente = null;
 		List<Cliente> clientes = Cliente.findAll();
 
-		if (clientes.size() == 0) {
+		if (clientes.isEmpty()) {
 			cliente = new Cliente();
-
 			cliente.setId(null);
 			cliente.setNome("Cleiton");
 			cliente.setCpf(36985214567L);
 			cliente.setCidade(this.cidade);
-
 			cliente.save();
 		} else {
 			cliente = clientes.get(0);
@@ -131,15 +124,13 @@ public class Test extends TestCase {
 		List<Fornecedor> fornecedores = Fornecedor.findAll();
 		MyEntity.log("\nTotal de fornecedores: " + fornecedores.size());
 
-		if (fornecedores.size() == 0) {
+		if (fornecedores.isEmpty()) {
 			fornecedor = new Fornecedor();
-
 			fornecedor.setId(null);
-			fornecedor.setNome("Laboratórios Teuto S.A.");
+			fornecedor.setNome("Laboratï¿½rios Teuto S.A.");
 			fornecedor.setNomeFantasia("Teuto");
 			fornecedor.setCnpj(12345678912345L);
 			fornecedor.setCidade(this.cidade);
-
 			fornecedor.save();
 		} else {
 			fornecedor = fornecedores.get(0);
@@ -157,9 +148,8 @@ public class Test extends TestCase {
 		Funcionario funcionario = null;
 		List<Funcionario> funcionarios = Funcionario.findAll();
 
-		if (funcionarios.size() == 0) {
+		if (funcionarios.isEmpty()) {
 			funcionario = new Funcionario();
-
 			funcionario.setId(null);
 			funcionario.setNome("Cleiton");
 			funcionario.setCpf(12365478952L);
@@ -167,7 +157,6 @@ public class Test extends TestCase {
 			funcionario.setDataAdimissao(FormatUtils.getDate(12, 10, 2015));
 			funcionario.setDataDemissao(null);
 			funcionario.setCidade(this.cidade);
-
 			funcionario.save();
 		} else {
 			funcionario = funcionarios.get(0);
@@ -178,9 +167,7 @@ public class Test extends TestCase {
 
 	public void testCarregarEntidadeComIdInvalido() throws Exception {
 		Long id = -1L;
-
 		Estado estadoError = Estado.find(id);
-
 		MyEntity.log("estadoError: " + estadoError);
 	}
 }

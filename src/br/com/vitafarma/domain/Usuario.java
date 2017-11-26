@@ -74,7 +74,7 @@ public class Usuario extends MyEntity implements Serializable, Comparable<Usuari
 	@NotNull
 	@ManyToOne(targetEntity = Authority.class, optional = false)
 	@JoinColumn(nullable = false, name = "USUARIO_AUTHORITY_USERNAME")
-	private transient Authority authority = null;
+	private Authority authority = null;
 
 	public String getNome() {
 		return this.nome;

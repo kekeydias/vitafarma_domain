@@ -81,7 +81,7 @@ public class Cidade extends MyEntity implements Serializable, Comparable<Cidade>
 	@NotNull
 	@ManyToOne(targetEntity = Estado.class, optional = false)
 	@JoinColumn(name = "CIDADE_ESTADO_ID", nullable = false)
-	private transient Estado estado = null;
+	private Estado estado = null;
 
 	public void refresh() {
 		this.getEntityManager().getTransaction().begin();
