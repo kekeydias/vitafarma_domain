@@ -69,6 +69,14 @@ public abstract class MyEntity extends TestCase implements Serializable {
 			try {
 				MyEntity.em = MyEntity.emf.createEntityManager();
 			} catch (Exception ex) {
+				ex.printStackTrace();
+
+				if (ex.getCause() != null) {
+					ex.getCause().printStackTrace();
+				}
+
+				System.out.println("\nErro: " + ex.getMessage() + '\n');
+				System.out.println(ex);
 				System.err.println("\nErro: " + ex.getMessage() + '\n');
 				System.err.println(ex);
 
