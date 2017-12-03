@@ -46,6 +46,12 @@ public abstract class MyEntity extends TestCase implements Serializable {
 		try {
 			MyEntity.LOGGER = Logger.getLogger(MyEntity.class.getName());
 		} catch (Exception ex) {
+			ex.printStackTrace();
+
+			if (ex.getCause() != null) {
+				ex.getCause().printStackTrace();
+			}
+
 			System.err.println("ERRO AO INICIAR OBJETO LOGGER. PASSAMOS A UTILIZAR SAIDA PADRAO DE LOG.");
 			System.err.println(ex);
 
@@ -154,8 +160,10 @@ public abstract class MyEntity extends TestCase implements Serializable {
 			if (other.getId() != null) {
 				return false;
 			}
-		} else if (!this.getId().equals(other.getId())) {
-			return false;
+		} else {
+			if (!this.getId().equals(other.getId())) {
+				return false;
+			}
 		}
 
 		return true;

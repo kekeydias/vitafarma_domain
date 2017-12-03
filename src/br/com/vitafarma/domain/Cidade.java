@@ -144,7 +144,7 @@ public class Cidade extends MyEntity implements Serializable, Comparable<Cidade>
 
 	@SuppressWarnings("unchecked")
 	public static List<Cidade> findByEstado(Estado estado) {
-		MyEntity.log("estado", estado);
+		Cidade.log("estado", estado);
 
 		if (estado == null) {
 			return Collections.emptyList();
@@ -160,7 +160,7 @@ public class Cidade extends MyEntity implements Serializable, Comparable<Cidade>
 	}
 
 	public static Cidade find(Long id) {
-		MyEntity.log("id", id);
+		Cidade.log("id", id);
 
 		if (id == null) {
 			return null;
@@ -173,8 +173,8 @@ public class Cidade extends MyEntity implements Serializable, Comparable<Cidade>
 
 	@SuppressWarnings("unchecked")
 	public static List<Cidade> findBy(String nomeCidade, String nomeEstado) {
-		MyEntity.log("nomeCidade", nomeCidade);
-		MyEntity.log("nomeEstado", nomeEstado);
+		Cidade.log("nomeCidade", nomeCidade);
+		Cidade.log("nomeEstado", nomeEstado);
 
 		boolean emptyFilter = true;
 		if (!InputOutputUtils.isBlank(nomeCidade) || !InputOutputUtils.isBlank(nomeEstado)) {
@@ -273,8 +273,8 @@ public class Cidade extends MyEntity implements Serializable, Comparable<Cidade>
 	}
 
 	public static Boolean checkCidadeEstadoUnique(String value, List<Long> idsDomains) {
-		MyEntity.log("value", value);
-		MyEntity.log("idsDomains", idsDomains);
+		Cidade.log("value", value);
+		Cidade.log("idsDomains", idsDomains);
 
 		Long estadoId = null;
 		if (idsDomains != null && idsDomains.size() != 0) {

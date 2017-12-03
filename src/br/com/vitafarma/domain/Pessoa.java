@@ -103,8 +103,14 @@ public abstract class Pessoa extends MyEntity implements Serializable {
 
 	@Override
 	public String toString() {
+		String estado = "<null>";
+
+		if (this.getCidade() != null && this.getCidade().getEstado() != null) {
+			estado = this.getCidade().getEstado().toString();
+		}
+
 		return "\nId: " + this.getId() + "\nNome: " + this.getNome() + "\nTelefone: " + this.getTelefone()
-				+ "\nEndereco: " + this.getEndereco() + "\nCidade: " + this.getCidade() + "\nEstado: "
-				+ this.getCidade().getEstado().toString() + "\nEmail: " + this.getEmail();
+				+ "\nEndereco: " + this.getEndereco() + "\nCidade: " + this.getCidade() + "\nEstado: " + estado
+				+ "\nEmail: " + this.getEmail();
 	}
 }
